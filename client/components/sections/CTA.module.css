@@ -1,0 +1,75 @@
+.cta {
+  padding: 6rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--card);
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.content h2 span {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content p {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  margin-bottom: 3rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.secondaryBtn {
+  color: var(--foreground) !important;
+}
+
+.bgGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+  opacity: 0.1;
+  filter: blur(60px);
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .cta {
+    padding: 10rem 2rem;
+  }
+  
+  .content h2 {
+    font-size: 4rem;
+  }
+  
+  .actions {
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,191 @@
+/* Mobile First Overview */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+}
+
+.header p {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.statCard {
+  padding: 1.25rem !important;
+}
+
+.statHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.statIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.revenue { background: rgba(79, 70, 229, 0.1); color: var(--primary); }
+.deals { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.reach { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+.engagement { background: rgba(236, 72, 153, 0.1); color: #ec4899; }
+
+.statTrend {
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #10b981;
+}
+
+.statValue {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  font-family: 'Outfit', sans-serif;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background-color: var(--muted);
+  border-radius: var(--radius);
+  transition: transform 0.2s ease;
+}
+
+.listItem:hover {
+  transform: translateX(4px);
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemName {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.itemMeta {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.itemRight {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.itemValue {
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.itemStatus {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+.inprogress { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+.draft { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+.paid { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+
+.taskItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 2px solid var(--border);
+  cursor: pointer;
+}
+
+/* Tablet & Desktop Adjustments */
+@media (min-width: 640px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    gap: 2rem;
+  }
+  
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .stats {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .grid {
+    grid-template-columns: 2fr 1fr;
+  }
+  
+  .listItem {
+    padding: 1rem;
+  }
+}

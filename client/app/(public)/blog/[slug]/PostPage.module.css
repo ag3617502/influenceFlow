@@ -1,0 +1,43 @@
+.article {
+  padding-top: 4.5rem;
+  background-color: var(--background);
+}
+
+.header {
+  padding: 6rem 0 3rem;
+  background: linear-gradient(to bottom, var(--card), var(--background));
+  border-bottom: 1px solid var(--border);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.meta {
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.header h1 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  color: var(--foreground);
+}
+
+.content {
+  padding: 4rem 0;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--foreground);
+}
+
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+  }
+}

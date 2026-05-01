@@ -1,0 +1,29 @@
+# Ignore everything in the root directory by default
+/*
+
+# Allow the client and server directories
+!/client/
+!/server/
+
+# Allow this gitignore file itself
+!/.gitignore
+
+# Specific ignores for subdirectories
+**/node_modules/
+**/.next/
+**/.env
+**/.env.*
+**/.DS_Store
+**/dist/
+**/build/
+**/package-lock.json
+
+# Ignore temporary/design folders explicitly (as requested by "all other folders cant go")
+/newDesign/
+/olddesign/
+/design/
+/*.html
+/*.png
+/*.jpg
+/*.jpeg
+/*.svg

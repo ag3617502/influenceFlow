@@ -1,0 +1,50 @@
+/* Robust Dashboard Layout Pattern */
+
+.layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* Prevent the entire window from scrolling */
+  background-color: var(--background);
+}
+
+/* Sidebar stays fixed to the left */
+.sidebarContainer {
+  width: 280px;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+/* Main takes the rest of the space */
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden; /* Header stays, only content scrolls */
+}
+
+/* Header is a flex child of .main, NOT fixed */
+/* This ensures it takes space in flow and the content starts exactly after it */
+/* But wait, the user wants it to be "sticky" or "fixed" relative to scroll? */
+/* In this pattern, the .content container scrolls, so the header stays put because it's outside .content */
+
+.content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  overflow-y: auto; /* This is the scrollable area */
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .content {
+    padding: 2.5rem;
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 1023px) {
+  .sidebarContainer {
+    display: none; /* Sidebar is fixed/overlay in Sidebar.tsx */
+  }
+}

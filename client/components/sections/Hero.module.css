@@ -1,0 +1,174 @@
+.hero {
+  position: relative;
+  padding: 8rem 1.5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  min-height: 90vh;
+  background: radial-gradient(circle at top center, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  text-align: center;
+  max-width: 900px;
+  margin-bottom: 5rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-radius: 100px;
+  color: var(--primary);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--foreground);
+}
+
+.title span {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.imageWrapper {
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  margin-top: 2rem;
+  perspective: 1000px;
+}
+
+.glassFrame {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 12px;
+  box-shadow: 
+    0 30px 60px -12px rgba(0, 0, 0, 0.4),
+    0 18px 36px -18px rgba(0, 0, 0, 0.5);
+  transform: rotateX(5deg);
+  transition: transform 0.5s ease;
+}
+
+.glassFrame:hover {
+  transform: rotateX(0deg) scale(1.01);
+}
+
+.dashboardImage {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.floatingCard1, .floatingCard2 {
+  position: absolute;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-lg);
+  z-index: 20;
+  animation: float 5s ease-in-out infinite;
+}
+
+.floatingCard1 {
+  top: 5%;
+  left: -8%;
+  color: #10b981;
+}
+
+.floatingCard2 {
+  bottom: 10%;
+  right: -8%;
+  animation-delay: 2.5s;
+  color: var(--primary);
+}
+
+.cardDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: currentColor;
+  box-shadow: 0 0 10px currentColor;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 12rem 1.5rem 10rem;
+  }
+  
+  .title {
+    font-size: 5rem;
+  }
+  
+  .description {
+    font-size: 1.375rem;
+  }
+  
+  .actions {
+    flex-direction: row;
+    width: auto;
+  }
+}
+
+@media (max-width: 1100px) {
+  .floatingCard1, .floatingCard2 {
+    display: none;
+  }
+}
