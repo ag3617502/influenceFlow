@@ -45,10 +45,19 @@ app.use(passport.initialize());
 // Routes
 const authRoutes = require('./routes/authRoutes');
 const clientRoutes = require('./routes/clientRoutes');
+const dealRoutes = require('./routes/dealRoutes');
+
+const partnerRoutes = require('./routes/partnerRoutes');
+const invoiceRoutes = require('./routes/invoiceRoutes');
+const expenseRoutes = require('./routes/expenseRoutes');
 
 // Mount routes
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/clients', clientRoutes);
+app.use('/api/v1/deals', dealRoutes);
+app.use('/api/v1/partners', partnerRoutes);
+app.use('/api/v1/invoices', invoiceRoutes);
+app.use('/api/v1/expenses', expenseRoutes);
 
 // Mount Google specific routes at root to match console settings
 app.use('/auth', authRoutes);

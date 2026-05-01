@@ -1,0 +1,325 @@
+.container {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+  transition: color 0.2s;
+}
+
+.backBtn:hover {
+  color: var(--primary);
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.titleArea {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.titleArea h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.statusBadge {
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.headerActions {
+  display: flex;
+  gap: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+}
+
+.infoCard {
+  margin-bottom: 32px;
+}
+
+.description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  font-size: 1rem;
+}
+
+.detailsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detailLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.entityLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.smallAvatar {
+  width: 24px;
+  height: 24px;
+  background: var(--primary);
+  color: white;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.platformTags {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.timelineText {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.sectionHeader h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.financialItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px !important;
+  margin-bottom: 12px;
+  transition: transform 0.2s;
+}
+
+.financialItem:hover {
+  transform: translateX(4px);
+}
+
+.itemMain {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.itemIcon {
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemName {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.itemSub {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.itemMeta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.itemAmount {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.itemStatus {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.itemStatus[data-status="Paid"] { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.itemStatus[data-status="Overdue"] { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+.itemStatus[data-status="Draft"] { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+
+.moreBtn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Side Column Styles */
+.financialSummary {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--primary) !important;
+  padding: 24px !important;
+  margin-bottom: 24px;
+}
+
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.summaryLabel {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.summaryValue {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.summaryDivider {
+  height: 1px;
+  background: var(--border-color);
+  margin: 16px 0;
+}
+
+.netProfit {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profitLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.profitValue {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #10b981;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.progressBar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.milestoneList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.milestoneItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.checkIcon {
+  color: #10b981;
+  font-size: 1.25rem;
+}
+
+.pendingDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--border-color);
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.milestoneItem[data-pending="true"] {
+  opacity: 0.5;
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

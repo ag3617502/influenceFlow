@@ -89,7 +89,7 @@ const ClientsListPage = () => {
           </p>
         </div>
         <div className={styles.actions}>
-          <Link href="/dashboard/clients/new">
+          <Link href={ROUTES.clientNew}>
             <Button variant="primary">
               <AddIcon fontSize="small" /> Add Client
             </Button>

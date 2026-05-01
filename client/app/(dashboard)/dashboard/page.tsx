@@ -43,7 +43,7 @@ export default function DashboardPage() {
         <Link href="#" className={styles.actionBtn}>
           <AccountBalanceWalletIcon fontSize="small" /> Log Expense
         </Link>
-        <Link href="#" className={styles.actionBtn}>
+        <Link href={ROUTES.clientNew} className={styles.actionBtn}>
           <GroupAddIcon fontSize="small" /> Add Client
         </Link>
         <Link href="#" className={styles.actionBtn}>
