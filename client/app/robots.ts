@@ -1,12 +1,13 @@
 import { MetadataRoute } from 'next';
+import { APP_CONFIG } from '@/lib/constants';
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/dashboard/',
+      disallow: ['/dashboard/', '/api/'], // Private routes
     },
-    sitemap: 'https://influenceflow.com/sitemap.xml',
+    sitemap: `${APP_CONFIG.baseUrl}/sitemap.xml`,
   };
 }

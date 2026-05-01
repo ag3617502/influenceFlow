@@ -1,9 +1,16 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Button from '../ui/Button';
 import styles from './Hero.module.css';
+import { useAuth } from '@/components/providers/AuthProvider';
+import { ROUTES } from '@/lib/constants';
 
 const Hero = () => {
+  const { user, loading } = useAuth();
+
   return (
     <section className={styles.hero}>
       <div className={styles.container}>
@@ -18,7 +25,17 @@ const Hero = () => {
             Stop using spreadsheets and start using InfluenceFlow.
           </p>
           <div className={`${styles.actions} fade-in`}>
-            <Button size="lg" variant="primary">Start Free Trial</Button>
+            {!loading && (
+              user ? (
+                <Link href={ROUTES.dashboard}>
+                  <Button size="lg" variant="primary">Go to Dashboard →</Button>
+                </Link>
+              ) : (
+                <Link href={ROUTES.signup}>
+                  <Button size="lg" variant="primary">Start Free Trial</Button>
+                </Link>
+              )
+            )}
             <Button size="lg" variant="outline">Watch Demo</Button>
           </div>
         </div>

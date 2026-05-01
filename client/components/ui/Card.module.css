@@ -8,6 +8,7 @@
   flex-direction: column;
   transition: all 0.3s ease;
   box-shadow: var(--shadow-sm);
+  position: relative;
 }
 
 .hoverable:hover {
@@ -16,30 +17,39 @@
   border-color: var(--primary);
 }
 
+.topAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
 .header {
-  padding: 1.5rem;
+  padding: 0.875rem 1rem; /* Further reduced from 1.25rem */
   border-bottom: 1px solid var(--border);
 }
 
 .title {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1rem; /* Reduced from 1.125rem */
   color: var(--foreground);
+  font-weight: 700;
 }
 
 .description {
-  margin: 0.5rem 0 0;
-  font-size: 0.875rem;
+  margin: 0.25rem 0 0;
+  font-size: 0.75rem;
   color: var(--muted-foreground);
 }
 
 .content {
-  padding: 1.5rem;
+  padding: 1rem; /* Further reduced from 1.25rem */
   flex-grow: 1;
 }
 
 .footer {
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1rem; /* Further reduced */
   border-top: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.02);
 }

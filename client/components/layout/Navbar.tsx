@@ -8,21 +8,21 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import FlashOnIcon from '@mui/icons-material/FlashOn';
 import Button from '../ui/Button';
+import Logo from '../ui/Logo';
 import styles from './Navbar.module.css';
 import { useTheme } from '@/hooks/useTheme';
+import { useAuth } from '@/components/providers/AuthProvider';
 import { APP_CONFIG, ROUTES } from '@/lib/constants';
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
+  const { user, loading } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className={styles.nav}>
       <div className={styles.container}>
-        <Link href={ROUTES.home} className={styles.logo}>
-          <FlashOnIcon className={styles.logoIcon} />
-          {APP_CONFIG.name.replace('Flow', '')}<span>Flow</span>
-        </Link>
+        <Logo size="sm" />
         
         {/* Desktop Links */}
         <div className={styles.links}>
@@ -44,12 +44,22 @@ const Navbar = () => {
           </button>
           
           <div className={styles.desktopActions}>
-            <Link href={ROUTES.login} className={styles.loginLink}>
-              Login
-            </Link>
-            <Link href={ROUTES.signup}>
-              <Button variant="primary" size="md">Get Started</Button>
-            </Link>
+            {!loading && (
+              user ? (
+                <Link href={ROUTES.dashboard}>
+                  <Button variant="primary" size="md">Dashboard</Button>
+                </Link>
+              ) : (
+                <>
+                  <Link href={ROUTES.login} className={styles.loginLink}>
+                    Login
+                  </Link>
+                  <Link href={ROUTES.signup}>
+                    <Button variant="primary" size="md">Get Started</Button>
+                  </Link>
+                </>
+              )
+            )}
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -69,10 +79,20 @@ const Navbar = () => {
           <Link href={ROUTES.about} className={styles.mobileLink} onClick={() => setIsOpen(false)}>About</Link>
           <Link href={ROUTES.blog} className={styles.mobileLink} onClick={() => setIsOpen(false)}>Blog</Link>
           <hr className={styles.divider} />
-          <Link href={ROUTES.login} className={styles.mobileLink} onClick={() => setIsOpen(false)}>Login</Link>
-          <Link href={ROUTES.signup} className={styles.mobileLink} onClick={() => setIsOpen(false)}>
-            <Button variant="primary" className={styles.fullWidth}>Get Started</Button>
-          </Link>
+          {!loading && (
+            user ? (
+              <Link href={ROUTES.dashboard} className={styles.mobileLink} onClick={() => setIsOpen(false)}>
+                <Button variant="primary" className={styles.fullWidth}>Dashboard</Button>
+              </Link>
+            ) : (
+              <>
+                <Link href={ROUTES.login} className={styles.mobileLink} onClick={() => setIsOpen(false)}>Login</Link>
+                <Link href={ROUTES.signup} className={styles.mobileLink} onClick={() => setIsOpen(false)}>
+                  <Button variant="primary" className={styles.fullWidth}>Get Started</Button>
+                </Link>
+              </>
+            )
+          )}
         </div>
       )}
     </nav>

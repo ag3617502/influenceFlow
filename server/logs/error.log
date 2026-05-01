@@ -1,0 +1,12 @@
+2026-05-01 12:04:03:43 [31merror[39m: [31mGET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM-3_W-c7bYx7BFGz1mzy2eFL1C48HUKVnZZiZIjV-NHUc0TgFweVutUT8c98kDmZQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none - next is not a function[39m
+2026-05-01 12:04:03:43 [31merror[39m: [31mGET /favicon.ico - Route not found - /favicon.ico[39m
+2026-05-01 12:04:35:435 [31merror[39m: [31mGET /api/v1/auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM-_J8qdOkFfavo0-8-IgBxeOEbJ6Lvl3tvVaAafYIqRFPXu4GrreMaO2k2UcJ-tSw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&authuser=0&prompt=none - next is not a function[39m
+2026-05-01 12:04:35:435 [31merror[39m: [31mGET /.well-known/appspecific/com.chrome.devtools.json - Route not found - /.well-known/appspecific/com.chrome.devtools.json[39m
+2026-05-01 12:21:44:2144 [31merror[39m: [31mGET /auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM-gNkDd7Ney2n3x-cUtdRjYXyFlj7XD2aGRIYo8O1pUgvaLHcDoVxEmDne_KI1Q6Q&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent - Route not found - /auth/google/callback?iss=https%3A%2F%2Faccounts.google.com&code=4%2F0AeoWuM-gNkDd7Ney2n3x-cUtdRjYXyFlj7XD2aGRIYo8O1pUgvaLHcDoVxEmDne_KI1Q6Q&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent[39m
+2026-05-01 12:25:02:252 [31merror[39m: [31mGET /api/v1/auth/google - Route not found - /api/v1/auth/google[39m
+2026-05-01 12:48:39:4839 [31merror[39m: [31mAuth Middleware Error: Unauthorized request[39m
+2026-05-01 12:48:39:4839 [31merror[39m: [31mGET /api/v1/auth/me - Unauthorized request[39m
+2026-05-01 12:49:40:4940 [31merror[39m: [31mAuth Middleware Error: Unauthorized request[39m
+2026-05-01 12:49:40:4940 [31merror[39m: [31mGET /api/v1/auth/me - Unauthorized request[39m
+2026-05-01 12:50:00:500 [31merror[39m: [31mAuth Middleware Error: Unauthorized request[39m
+2026-05-01 12:50:00:500 [31merror[39m: [31mGET /api/v1/auth/me - Unauthorized request[39m

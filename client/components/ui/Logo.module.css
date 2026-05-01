@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-1px);
+}
+
+.iconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 12px;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px -3px rgba(79, 70, 229, 0.4);
+}
+
+.iconInner {
+  width: 60%;
+  height: 60%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle, var(--primary), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.container:hover .iconGlow {
+  opacity: 0.3;
+}
+
+.name {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  color: var(--foreground);
+  letter-spacing: -0.5px;
+}
+
+.name span {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Sizes */
+.sm .iconWrapper {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+}
+.sm .name { font-size: 1.125rem; }
+
+.md .iconWrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+}
+.md .name { font-size: 1.5rem; }
+
+.lg .iconWrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+}
+.lg .name { font-size: 2rem; }
+
+[data-theme='dark'] .name {
+  color: white;
+}

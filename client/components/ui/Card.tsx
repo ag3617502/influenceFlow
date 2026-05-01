@@ -4,22 +4,28 @@ import styles from './Card.module.css';
 interface CardProps {
   children: React.ReactNode;
   title?: string;
+  subtitle?: string; // Standardizing from 'description' to 'subtitle' as used in dashboard
   description?: string;
   footer?: React.ReactNode;
   className?: string;
   hoverable?: boolean;
   glass?: boolean;
+  topAccent?: string; // Hex color or CSS variable
 }
 
 const Card: React.FC<CardProps> = ({
   children,
   title,
+  subtitle,
   description,
   footer,
   className = '',
   hoverable = false,
   glass = false,
+  topAccent,
 }) => {
+  const descText = subtitle || description;
+
   return (
     <div className={`
       ${styles.card} 
@@ -27,10 +33,17 @@ const Card: React.FC<CardProps> = ({
       ${glass ? 'glass' : ''} 
       ${className}
     `}>
+      {topAccent && (
+        <div 
+          className={styles.topAccent} 
+          style={{ backgroundColor: topAccent }} 
+        />
+      )}
+      
       {title && (
         <div className={styles.header}>
           <h3 className={styles.title}>{title}</h3>
-          {description && <p className={styles.description}>{description}</p>}
+          {descText && <p className={styles.description}>{descText}</p>}
         </div>
       )}
       <div className={styles.content}>

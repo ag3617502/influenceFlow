@@ -13,7 +13,7 @@ import BarChartIcon from '@mui/icons-material/BarChart';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import CloseIcon from '@mui/icons-material/Close';
-import FlashOnIcon from '@mui/icons-material/FlashOn';
+import Logo from '../ui/Logo';
 import styles from './Sidebar.module.css';
 import { APP_CONFIG, ROUTES } from '@/lib/constants';
 
@@ -64,10 +64,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
       <aside className={`${styles.sidebar} ${isOpen ? styles.sidebarOpen : ''}`}>
         <div className={styles.logo}>
-          <Link href={ROUTES.home} className={styles.logoGroup} onClick={onClose}>
-            <FlashOnIcon className={styles.logoIcon} />
-            {APP_CONFIG.name.replace('Flow', '')}<span>Flow</span>
-          </Link>
+          <Logo size="sm" onClick={onClose} />
           <button className={styles.closeBtn} onClick={onClose}>
             <CloseIcon />
           </button>
@@ -79,11 +76,15 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               <div className={styles.navSectionLabel}>{section.label}</div>
               {section.items.map((item) => {
                 const Icon = item.icon;
+                const isActive = item.label === 'Dashboard' 
+                  ? pathname === item.href 
+                  : pathname.startsWith(item.href);
+
                 return (
                   <Link 
                     key={item.href} 
                     href={item.href} 
-                    className={`${styles.navItem} ${pathname === item.href ? styles.active : ''}`}
+                    className={`${styles.navItem} ${isActive ? styles.active : ''}`}
                     onClick={onClose}
                   >
                     <Icon className={styles.navIcon} fontSize="small" />
